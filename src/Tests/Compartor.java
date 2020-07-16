@@ -13,9 +13,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Compartor {
 	
+	
+	
 	public  String[] UI_citylist() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data.xlsx";
+		File file =   new File(X);
+//		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		Workbook abc = new XSSFWorkbook(inputStream);
@@ -38,7 +44,11 @@ public class Compartor {
 
 	public  String[] UI_Humidty() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data.xlsx";
+		File file =   new File(X);
+		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		Workbook abc = new XSSFWorkbook(inputStream);
@@ -60,7 +70,11 @@ public class Compartor {
 	
 	public  String[] UI_Temp() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data.xlsx";
+		File file =   new File(X);
+		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		Workbook abc = new XSSFWorkbook(inputStream);
@@ -84,7 +98,11 @@ public class Compartor {
 	
 	public  String[] API_citylist() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data-API.xls");
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data-API.xls";
+		File file =   new File(X);
+		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data-API.xls");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		HSSFWorkbook  abc = new HSSFWorkbook (inputStream);
@@ -107,7 +125,11 @@ public class Compartor {
 
 	public  String[] API_Humdlist() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data-API.xls");
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data-API.xls";
+		File file =   new File(X);
+		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data-API.xls");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		HSSFWorkbook  abc = new HSSFWorkbook (inputStream);
@@ -129,7 +151,12 @@ public class Compartor {
 	
 	public  String[] API_Templist() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data-API.xls");
+		
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data-API.xls";
+		File file =   new File(X);
+		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data-API.xls");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		HSSFWorkbook  abc = new HSSFWorkbook (inputStream);
