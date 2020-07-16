@@ -3,20 +3,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import Page.Homepage;
 import Page.Weatherpage;
 import junit.framework.Assert;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Testcase1
 {
@@ -26,8 +25,11 @@ WebDriver driver;
 
 	public void setup()
 	{
-    System.setProperty("webdriver.chrome.driver","C:\\Users\\Princ3-PC\\Documents\\chromedriver_win32\\chromedriver.exe");
-	driver = new ChromeDriver();
+//    System.setProperty("webdriver.chrome.driver","C:\\Users\\Princ3-PC\\Documents\\chromedriver_win32\\chromedriver.exe");
+//	driver = new ChromeDriver();
+		
+	WebDriverManager.chromedriver().setup();
+    driver = new ChromeDriver();    
 	 hm = new Homepage(driver);
 	 wp = new Weatherpage(driver);
 	 
@@ -78,7 +80,11 @@ WebDriver driver;
 	
 	public String[] citylist() throws InterruptedException,IOException
 	{
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data.xlsx";
+		
+		File file =   new File(X);
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		Workbook abc = new XSSFWorkbook(inputStream);
@@ -92,7 +98,7 @@ WebDriver driver;
 		{
 	        Row row = Sh.getRow(i);
 	       city[i-1]= row.getCell(1).getStringCellValue();
-		}
+	    }
 		
 		inputStream.close();
 		return city;
@@ -101,8 +107,12 @@ WebDriver driver;
 	
 	public void writedata(String[] details, int row) throws IOException
 	{
+		String X=System.getProperty("user.dir");
+		X=X+"\\"+"Data"+"\\"+"Data.xlsx";
 		
-		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
+		File file =   new File(X);
+		
+//		File file =   new File("C:\\Users\\Princ3-PC\\Desktop\\TestVagrant\\Data\\Data.xlsx");
 		FileInputStream inputStream = new FileInputStream(file);
 		@SuppressWarnings("resource")
 		Workbook abc = new XSSFWorkbook(inputStream);
