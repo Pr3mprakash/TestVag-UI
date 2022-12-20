@@ -9,6 +9,7 @@ public class Trail {
 	String X=System.getProperty("user.dir");
 	X=X+"Data"+"\\"+"Data.xls";
 	System.out.println(X);
+	System.out.println(X);
 	}
 
 }
